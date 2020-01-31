@@ -3,13 +3,13 @@ var express = require("express");
 var router = express.Router();
 
 // Import the model (cat.js) to use its database functions.
-var ani = require("../models/index.js");
+var user = require("../models/index.js");
 
 // Create all our routes and set up logic within those routes where required.
 router.get("/", function(req, res) {
-  ani.all(function(data) {
+  user.all(function(data) {
     var hbsObject = {
-      anis: data
+      users: data
     };
     console.log(hbsObject);
     res.render("index", hbsObject);
@@ -17,7 +17,7 @@ router.get("/", function(req, res) {
 });
 
 router.post("/api/anis", function(req, res) {
-  ani.create([
+  user.create([
     "name", "description"
   ], [
     req.body.name, req.body.description
