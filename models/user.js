@@ -3,11 +3,14 @@ function addUser(sequelize, DataTypes) {
         username: {
             type: DataTypes.STRING,
             allowNull: false,
-            isEmail: true,
-            lin: [1, 100]
+            len: [1, 100]
         },
-        // password: {
-            
-        // }
+        password: {
+            type: DataTypes.STRING,
+            allowNull: false,  
+            len: [8, 100]
+        }
     })
+    return User;
 };
+module.exports = addUser;
