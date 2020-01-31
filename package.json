@@ -1,10 +1,11 @@
 {
   "name": "y",
   "version": "1.0.0",
-  "description": "",
+  "description": "would best greatest world renoun-est anime site of all time",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -17,6 +18,7 @@
   },
   "homepage": "https://github.com/jwescott/AniYou#readme",
   "dependencies": {
+    "controller": "^1.0.0",
     "express": "^4.17.1",
     "express-handlebars": "^3.1.0",
     "mysql2": "^2.1.0",
