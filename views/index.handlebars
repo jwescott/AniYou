@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/cyborg/bootstrap.min.css" rel="stylesheet" integrity="sha384-l7xaoY0cJM4h9xh1RfazbgJVUZvdtyLWPueWNtLAphf/UbBgOVzqbOTogxPwYLHM" crossorigin="anonymous">
+
+</head>
+
+<body>
+  <div class="jumbotron">
+  <h1 class="display-3">AniYou!</h1>
+  <p class="lead">Welcome to AniYou! Where you can stay up to date on the latest Anime & Manga topics throughout the world.</p>
+  <hr class="my-4">
+  <p>Create a login below for access!</p>
+  <p class="lead">
+
+      <div class="container">
+          <form action="/action_page.php">
+            <label for="usrname">Username</label>
+            <input type="text" id="usrname" name="usrname" required>
+        
+            <label for="psw">Password</label>
+          <input type="password" id="psw" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+        
+            <input type="submit" value="Submit">
+          </form>
+        </div>
+        
+        <div id="message">
+          <p>Password must contain the following:</p>
+          <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+          <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+          <p id="number" class="invalid">A <b>number</b></p>
+          <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+        </div>
+
+    <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+
+  </p>
+</div>
+</body>
+</html>
