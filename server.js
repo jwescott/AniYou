@@ -19,6 +19,23 @@ app.set("view engine", "handlebars");
 var controller = require("./controllers/controller");
 controller(app);
 
+require("dotenv").config();
+
+var settings = {
+	"async": true,
+	"crossDomain": true,
+	"url": "https://jikan1.p.rapidapi.com/meta/requests/anime/today",
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-host": "jikan1.p.rapidapi.com",
+		"x-rapidapi-key": process.env.API_KEY
+	}
+}
+
+$.ajax(settings).done(function (response) {
+	console.log(response);
+});
+
 var db = require("./models");
 db.sequelize.sync().then(function () {
     app.listen(PORT, function () {
