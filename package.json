@@ -19,6 +19,7 @@
   "homepage": "https://github.com/jwescott/AniYou#readme",
   "dependencies": {
     "controller": "^1.0.0",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-handlebars": "^3.1.0",
     "mysql2": "^2.1.0",
