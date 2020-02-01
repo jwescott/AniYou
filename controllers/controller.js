@@ -22,6 +22,13 @@ function controller(app) {
     res.render("signin", {})
   })
 
+
+
+  app.get("/homepage", function (req, res) {
+    res.render("homepage", {})
+  })
+
+
   app.get("/discussion", function (req, res) {
     res.render("discussion", {})
   })
@@ -38,7 +45,6 @@ function controller(app) {
     });
   });
 
-};
 // Create all our routes and set up logic within those routes where required.
 
 module.exports = controller;
