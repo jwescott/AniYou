@@ -1,12 +1,14 @@
 
 
 // Import the model (cat.js) to use its database functions.
+// added a db selector from sequelize 
 var db = require("../models/index.js");
 
+// used app selector from server.js instead of router
 function controller (app) {
     app.get("/", function(req, res) {
       console.log("Homepage");
-      
+        //changed function all to findAll and added a .then
         db.User.findAll({}).then(function(data) {
           var hbsObject = {
             users: data
@@ -16,6 +18,11 @@ function controller (app) {
         });
       });
       
+    app.get("/signin", function(req, res){
+      res.render("signin",{})
+    })
+
+
       app.post("/api/anis", function(req, res) {
         db.User.create([
           "username", "password"
