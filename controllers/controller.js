@@ -22,6 +22,10 @@ function controller (app) {
       res.render("signin",{})
     })
 
+    app.get("/homepage", function(req, res){
+      res.render("homepage",{})
+    })
+
 
       app.post("/api/anis", function(req, res) {
         db.User.create([
