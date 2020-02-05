@@ -57,3 +57,7 @@ myInput.onkeyup = function() {
     length.classList.add("invalid");
   }
 };
+
+$('.carousel').carousel({
+  interval: 2000
+})
