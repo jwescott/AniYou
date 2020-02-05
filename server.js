@@ -33,7 +33,10 @@ var settings = {
 }
 
 $.ajax(settings).done(function (response) {
-	console.log(response);
+    console.log(response);
+    $(".submitAnime").on("click", function name(params) {
+        var searchedAnime = $(".submitTerm").val();
+    });
 });
 
 var db = require("./models");
