@@ -1,80 +1,52 @@
-<!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="UTF-8">
-    <title>AniYou!</title>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" style="font-family: 'Nothing You Could Do', cursive;" href="#">AniYou!</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02"
+    aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-    <!-- Compiled and minified JQuery-->
-    <script src="http://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <div class="collapse navbar-collapse" id="navbarColor02">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Discussion</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="text" placeholder="Search">
+      <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
 
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
-    </script>
+<div class="jumbotron">
+  <h1 class="text-center"
+    style="font-family: 'Nothing You Could Do', cursive; background-image: https://gaijinpot.scdn3.secure.raxcdn.com/wp-content/uploads/sites/6/2016/08/Maid-cafe-Akihabara.jpg">
+    AniYou!</h1>
+</div>
 
-    <!-- CSS -->
-    <link
-        href="https://fonts.googleapis.com/css?family=Jim+Nightshade|Nothing+You+Could+Do|Parisienne|Sonsie+One&display=swap"
-        rel="stylesheet">
+<div class="container">
 
-    <link rel="stylesheet" href="/public/assets/css/style.css" type="text/css">
-    <!-- Bootswatch -->
-    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/cyborg/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-l7xaoY0cJM4h9xh1RfazbgJVUZvdtyLWPueWNtLAphf/UbBgOVzqbOTogxPwYLHM" crossorigin="anonymous">
-  </head>
-
-  <body>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                <a class="navbar-brand" style="font-family: 'Nothing You Could Do', cursive;" href="#">AniYou!</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02"
-                    aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-        
-                <div class="collapse navbar-collapse" id="navbarColor02">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Discussion</a>
-                        </li>
-                    </ul>
-                    <form class="form-inline my-2 my-lg-0">
-                        <input class="form-control mr-sm-2" type="text" placeholder="Search">
-                        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-                    </form>
-                </div>
-            </nav>
-
-    <div class="jumbotron">
-      <h1 class="text-center" style="font-family: 'Nothing You Could Do', cursive; background-image: https://gaijinpot.scdn3.secure.raxcdn.com/wp-content/uploads/sites/6/2016/08/Maid-cafe-Akihabara.jpg">AniYou!</h1>
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+      <p class="cool-font">Name</p>
+      <input class="form-control" type="text" id="author" placeholder="Enter Your Name">
+      <br>
+      <p class="cool-font">Thoughts?</p>
+      <textarea class="form-control" rows="3" id="chirp-box"
+        placeholder="Enter your thoughts on any topic here!"></textarea>
+      <button id="chirp-submit" class="btn btn-lg pull-right">Submit!</button>
     </div>
+  </div>
 
-    <div class="container">
-
-      <div class="row">
-        <div class="col-sm-8 col-sm-offset-2">
-          <p class="cool-font">Name</p>
-          <input class="form-control" type="text" id="author" placeholder="Enter Your Name">
-          <br>
-          <p class="cool-font">Thoughts?</p>
-          <textarea class="form-control" rows="3" id="chirp-box" placeholder="Enter your thoughts on any topic here!"></textarea>
-          <button id="chirp-submit" class="btn btn-lg pull-right">Submit!</button>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-sm-8 col-sm-offset-2">
-          <h2>Discussions</h2>
-          <hr>
-          <div id="discussion-area"></div>
-        </div>
-      </div>
-
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+      <h2>Discussions</h2>
+      <hr>
+      <div id="discussion-area"></div>
     </div>
-  </body>
-</html>
+  </div>
+
+</div>
