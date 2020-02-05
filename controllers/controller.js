@@ -25,7 +25,9 @@ function controller(app) {
 
 
   app.get("/homepage", function (req, res) {
-    res.render("homepage", {})
+    res.render("homepage", {
+      
+    })
   })
 
 
@@ -35,15 +37,16 @@ function controller(app) {
 
 
   app.post("/api/anis", function (req, res) {
-    db.User.create([
-      "username", "password"
-    ], [
-      req.body.username, req.body.password
-    ], function (result) {
-      // Send back the ID of the new quote
-      res.json({ id: result.insertId });
+    db.User.create({ username: req.body.usrname, password: req.body.psw}).then((result)=>{
+      console.log(result.dataValues.username)
+      var obj = {
+        username: result.dataValues.username.toUpperCase(),
+        password: result.dataValues.password
+      }
+      res.render("homepage", obj)
     });
   });
+
 
 }
 // Create all our routes and set up logic within those routes where required.
