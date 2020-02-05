@@ -19,6 +19,8 @@ app.set("view engine", "handlebars");
 var controller = require("./controllers/controller");
 controller(app);
 
+app.use("/auth", controller);
+
 // require("dotenv").config();
 
 var settings = {

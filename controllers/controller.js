@@ -35,6 +35,13 @@ function controller(app) {
     res.render("discussion", {})
   })
 
+  app.get("/google" , function (req, res) {
+    res.send("logging in with google")
+  });
+
+  app.get("/logout" , function (req, res) {
+    res.send("logging out with google")
+  });
 
   app.post("/api/anis", function (req, res) {
     db.User.create({ username: req.body.usrname, password: req.body.psw}).then((result)=>{
@@ -47,8 +54,10 @@ function controller(app) {
     });
   });
 
+  
 
-}
+  
+};
 // Create all our routes and set up logic within those routes where required.
 
 module.exports = controller;
