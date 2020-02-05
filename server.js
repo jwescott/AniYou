@@ -19,7 +19,7 @@ app.set("view engine", "handlebars");
 var controller = require("./controllers/controller");
 controller(app);
 
-require("dotenv").config();
+// require("dotenv").config();
 
 var settings = {
 	"async": true,
@@ -31,10 +31,7 @@ var settings = {
 		"x-rapidapi-key": process.env.API_KEY
 	}
 }
-
-$.ajax(settings).done(function (response) {
-	console.log(response);
-});
+// console.log(settings)
 
 var db = require("./models");
 db.sequelize.sync().then(function () {
