@@ -1,34 +1,67 @@
-<div class="jumbotron">
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HOMER</title>
+
+
+    <!-- Compiled and minified JQuery-->
+    <script src="http://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+
+    <!-- CSS -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Jim+Nightshade|Nothing+You+Could+Do|Parisienne|Sonsie+One&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="/public/assets/css/style.css" type="text/css">
+    <!-- Bootswatch -->
+    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/cyborg/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-l7xaoY0cJM4h9xh1RfazbgJVUZvdtyLWPueWNtLAphf/UbBgOVzqbOTogxPwYLHM" crossorigin="anonymous">
+
+</head>
+
+
+<body>
+  <div class="jumbotron">
   <h1 class="display-3" style="font-family: 'Nothing You Could Do', cursive;">AniYou!</h1>
-  <p class="lead">Welcome to AniYou! Where you can stay up to date on the latest Anime & Manga topics throughout the
-    world.</p>
+  <p class="lead">Welcome to AniYou! Where you can stay up to date on the latest Anime & Manga topics throughout the world.</p>
   <hr class="my-4">
   <p>Create a login below for access!</p>
   <p class="lead">
 
-    <div class="container">
-      <form action="/api/anis" method="POST">
-        <label for="usrname">Username</label>
-        <input type="text" id="usrname" name="usrname" required>
-        <br>
-        <label for="psw">Password</label>
-        <input type="password" id="psw" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-          title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
-          required>
-
-        <input type="submit" value="Submit">
-      </form>
-    </div>
-
-    <div id="message">
-      <p>Password must contain the following:</p>
-      <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
-      <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
-      <p id="number" class="invalid">A <b>number</b></p>
-      <p id="length" class="invalid">Minimum <b>8 characters</b></p>
-    </div>
+      <div class="container">
+          <form action="/api/anis" method="POST">
+            <label for="usrname">Username</label>
+            <input type="text" id="usrname" name="usrname" required>
+            <br>
+            <label for="psw">Password</label>
+          <input type="password" id="psw" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+        
+            <input type="submit" value="Submit">
+          </form>
+        </div>
+        
+        <div id="message">
+          <p>Password must contain the following:</p>
+          <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+          <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+          <p id="number" class="invalid">A <b>number</b></p>
+          <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+        </div>
 
     <a class="btn btn-primary btn-lg" href="#" role="button">Discussion</a>
 
   </p>
 </div>
+</body>
