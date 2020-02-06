@@ -34,16 +34,7 @@ app.use("/auth", controller);
 
 // require("dotenv").config();
 
-var settings = {
-	"async": true,
-	"crossDomain": true,
-	"url": "https://jikan1.p.rapidapi.com/meta/requests/anime/today",
-	"method": "GET",
-	"headers": {
-		"x-rapidapi-host": "jikan1.p.rapidapi.com",
-		"x-rapidapi-key": process.env.API_KEY
-	}
-}
+
 // console.log(settings)
 
 var db = require("./models");
