@@ -26,13 +26,13 @@ function controller(app) {
       // Otherwise send back the user's email and id
       // Sending back a password, even a hashed password, isn't a good idea
      res.render("homepage", {})
-    }
+    };
     
-  })
+  });
 
   app.get("/api/discussion", function (req, res) {
     res.render("discussion", {})
-  })
+  });
 
   app.get("/api/anis", function (req, res) {
     res.render("homepage");
@@ -44,7 +44,7 @@ function controller(app) {
       var obj = {
         username: result.dataValues.username.toUpperCase(),
         password: result.dataValues.password
-      }
+      };
       res.render("homepage", obj)
     });
   });
