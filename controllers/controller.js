@@ -36,11 +36,15 @@ function controller(app) {
   })
 
   app.get("/google" , function (req, res) {
-    res.send("logging in with google")
+    console.log("logging in with google")
   });
 
   app.get("/logout" , function (req, res) {
-    res.send("logging out with google")
+    console.log("logging out")
+  });
+
+  app.get("/api/anis", function (req, res) {
+    res.render("homepage");
   });
 
   app.post("/api/anis", function (req, res) {
