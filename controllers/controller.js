@@ -6,42 +6,33 @@ var db = require("../models/index.js");
 
 // used app selector from server.js instead of router
 function controller(app) {
-  app.get("/", function (req, res) {
-    console.log("Homepage");
-    //changed function all to findAll and added a .then
-    db.User.findAll({}).then(function (data) {
-      var hbsObject = {
-        users: data
-      };
-      console.log(hbsObject);
-      res.render("index", hbsObject);
-    });
-  });
-
-  app.get("/signin", function (req, res) {
-    res.render("signin", {})
-  })
-
-
+  // app.get("/", function (req, res) {
+  //   console.log("Homepage");
+  //   //changed function all to findAll and added a .then
+  //   db.User.findAll({}).then(function (data) {
+  //     var hbsObject = {
+  //       users: data
+  //     };
+  //     console.log(hbsObject);
+  //     res.render("index", hbsObject);
+  //   });
+  // });
 
   app.get("/homepage", function (req, res) {
-    res.render("homepage", {
-      
-    })
+    if (!req.user) {
+      // The user is not logged in, send back an empty object
+      res.render("login", {})
+    } else {
+      // Otherwise send back the user's email and id
+      // Sending back a password, even a hashed password, isn't a good idea
+     res.render("homepage", {})
+    }
+    
   })
 
-
-  app.get("/discussion", function (req, res) {
+  app.get("/api/discussion", function (req, res) {
     res.render("discussion", {})
   })
-
-  app.get("/google" , function (req, res) {
-    console.log("logging in with google")
-  });
-
-  app.get("/logout" , function (req, res) {
-    console.log("logging out")
-  });
 
   app.get("/api/anis", function (req, res) {
     res.render("homepage");
