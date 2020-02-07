@@ -5,6 +5,10 @@ $(".submitBtn").on("click", function () {
        url: queryURL,
        method: "GET"
     }).then(function (response) {
-       console.log(response)
+       $(".searchInput").val("");
+       console.log(response);
+       for (let i = 0; i < 10; i++) {
+
+       }
     });
 });
