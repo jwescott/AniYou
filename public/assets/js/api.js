@@ -13,7 +13,7 @@ $(".submitBtn").on("click", function () {
    }
    
    $.ajax(settings).done(function (response) {
-      $(".searchInput").empty();
+      $(".searchInput").val("");
       console.log(response);
    });
 });
