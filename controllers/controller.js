@@ -6,17 +6,6 @@ var db = require("../models/index.js");
 
 // used app selector from server.js instead of router
 function controller(app) {
-  // app.get("/", function (req, res) {
-  //   console.log("Homepage");
-  //   //changed function all to findAll and added a .then
-  //   db.User.findAll({}).then(function (data) {
-  //     var hbsObject = {
-  //       users: data
-  //     };
-  //     console.log(hbsObject);
-  //     res.render("index", hbsObject);
-  //   });
-  // });
 
   app.get("/homepage", function (req, res) {
     if (!req.user) {
@@ -49,10 +38,37 @@ function controller(app) {
     });
   });
 
-  
+  app.get("/api/all", function(req, res) {
 
-  
+    // Finding all Chirps, and then returning them to the user as JSON.
+    // Sequelize queries are asynchronous, which helps with perceived speed.
+    // If we want something to be guaranteed to happen after the query, we'll use
+    // the .then function
+    db.Post.findAll({}).then(function(results) {
+      // results are available to us inside the .then
+      res.json(results);
+    });
+
+  });
+
+  // Add a chirp
+  app.post("/api/new", function(req, res) {
+
+    console.log("Post Data:");
+    console.log(req.body);
+
+    db.Post.create({
+      author: req.body.author,
+      body: req.body.body,
+    }).then(function(results) {
+      // `results` here would be the newly created chirp
+      res.end();
+    });
+
+  });
+
 };
-// Create all our routes and set up logic within those routes where required.
+
+
 
 module.exports = controller;
