@@ -17,25 +17,30 @@ $(".submitBtn").on("click", function () {
       $(".searchInput").val("");
       console.log(res);
       for (let i = 0; i < 10; i++) {
-         var newCard = $("<div>").addClass("card").attr("style", "width:18rem;");
+         var newCard = $("<div>").addClass("card col-sm-3");
          var newCardBody = $("<div>").addClass("card-body");
-         var title = $("<h5>").addClass("card-title");
-         var img = $("<img>").addClass("card-img-top").attr("src", res.results[i].img_url);
-         var synopsis = $("<p>").addClass("card-text").html(res.results[i].synopsis);
-         var score = $("<p>").addClass("card-text").html(res.results[i].score);
-         var rating = $("<p>").addClass("card-text").html(res.results[i].rating);
-         var startToEnd = $("<p>").addClass("card-text").html(res.results[i].start_date - res.results[i].end_date);
-         var numberOfEpisodes = $("<p>").addClass("card-text").attr(res.results[i].episodes);
+         var title = $("<h5>").addClass("card-title").html(res.results[i].title);
+         console.log(title);
+         var img = $("<img>").addClass("card-img-top").attr("src", res.results[i].image_url);
+         console.log(img);
+         var synopsis = $("<p>").addClass("card-text").html("Synopsis: " + res.results[i].synopsis);
+         console.log(synopsis)
+         var score = $("<p>").addClass("card-text").html("Score: " + res.results[i].score);
+         console.log(score);
+         var rating = $("<p>").addClass("card-text").html("Rating: " + res.results[i].rated);
+         var numberOfEpisodes = $("<p>").addClass("card-text").attr("Number of Episodes: " + res.results[i].episodes);
+         console.log(numberOfEpisodes );
          
          $(newCardBody).append(title);
          $(newCardBody).append(img);
          $(newCardBody).append(synopsis);
          $(newCardBody).append(score);
          $(newCardBody).append(rating);
-         $(newCardBody).append(startToEnd);
          $(newCardBody).append(numberOfEpisodes);
          $(newCard).append(newCardBody);
          $(".results").append(newCard);
+         console.log(newCard)
+         console.log(".results")
       };
    });
 
