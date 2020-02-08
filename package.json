@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/jwescott/AniYou#readme",
   "dependencies": {
+    "array-flatten": "^3.0.0",
     "bcryptjs": "2.4.3",
     "controller": "^1.0.0",
     "dotenv": "^8.2.0",
