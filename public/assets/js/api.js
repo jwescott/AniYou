@@ -2,18 +2,6 @@ $(".submitBtn").on("click", function () {
    event.preventDefault()
    var searchTerm = $(".searchInput").val();
 
-   var queryURL = " https://jikan1.p.rapidapi.com/meta/" + searchTerm + "/anime/today"
-    $.ajax({
-       url: queryURL,
-       method: "GET"
-    }).then(function (response) {
-       $(".searchInput").val("");
-       console.log(response);
-       for (let i = 0; i < 10; i++) {
-
-       }
-    });
-
    var settings = {
       "async": true,
       "crossDomain": true,
@@ -25,9 +13,30 @@ $(".submitBtn").on("click", function () {
       }
    }
    
-   $.ajax(settings).done(function (response) {
+   $.ajax(settings).done(function (res) {
       $(".searchInput").val("");
-      console.log(response);
+      console.log(res);
+      for (let i = 0; i < 10; i++) {
+         var newCard = $("<div>").addClass("card").attr("style", "width:18rem;");
+         var newCardBody = $("<div>").addClass("card-body");
+         var title = $("<h5>").addClass("card-title");
+         var img = $("<img>").addClass("card-img-top").attr("src", res.results[i].img_url);
+         var synopsis = $("<p>").addClass("card-text").html(res.results[i].synopsis);
+         var score = $("<p>").addClass("card-text").html(res.results[i].score);
+         var rating = $("<p>").addClass("card-text").html(res.results[i].rating);
+         var startToEnd = $("<p>").addClass("card-text").html(res.results[i].start_date - res.results[i].end_date);
+         var numberOfEpisodes = $("<p>").addClass("card-text").attr(res.results[i].episodes);
+         
+         $(newCardBody).append(title);
+         $(newCardBody).append(img);
+         $(newCardBody).append(synopsis);
+         $(newCardBody).append(score);
+         $(newCardBody).append(rating);
+         $(newCardBody).append(startToEnd);
+         $(newCardBody).append(numberOfEpisodes);
+         $(newCard).append(newCardBody);
+         $(".results").append(newCard);
+      };
    });
 
 });

@@ -20,7 +20,13 @@ function controller(app) {
   });
 
   app.get("/api/discussion", function (req, res) {
+    console.log("hello world 2")
     res.render("discussion", {})
+  });
+
+  app.get("/api/results", function (req, res) {
+    console.log("hello world")
+    res.render("results", {})
   });
 
   app.get("/api/anis", function (req, res) {
