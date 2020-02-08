@@ -3,7 +3,7 @@
 // Import the model (cat.js) to use its database functions.
 // added a db selector from sequelize 
 var db = require("../models/index.js");
-
+var axios = require("axios");
 // used app selector from server.js instead of router
 function controller(app) {
 
@@ -17,6 +17,11 @@ function controller(app) {
      res.render("homepage", {})
     };
     
+  });
+
+  app.get("/top10", function (req, res){
+    console.log(req.body)
+    res.render("top10",{})
   });
 
   app.get("/api/discussion", function (req, res) {
