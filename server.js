@@ -2,7 +2,6 @@ var express = require("express");
 var session = require("express-session");
 var passport = require("./config/passport")
 var app = express();
-
 var handlebars = require("express-handlebars");
 
 var PORT = process.env.PORT || 8080;
